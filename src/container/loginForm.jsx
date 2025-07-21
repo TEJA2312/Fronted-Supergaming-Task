@@ -24,7 +24,7 @@ export default function LoginForm() {
   
   const loginCall = async (data) => {
     try {
-      const response = await axiosInstance.post('http://localhost:8080/api/v1/user/login', {
+      const response = await axiosInstance.post('api/v1/user/login', {
         email: data.email,
         password: data.password
       });
