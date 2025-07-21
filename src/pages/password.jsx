@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import ButtonTypeOne from '../components/buttonType';
 import axios from 'axios';
+import axiosInstance from '../config/axiosInstance';
 
 function ChangePassword() {
   const [loginError, setLoginError] = useState(null);
@@ -19,7 +20,7 @@ function ChangePassword() {
   
   const changePasswordCall = async (data) => {
         try {
-          await axios.post('http://localhost:8080/api/v1/user/changePassword', 
+          await axiosInstance.post('api/v1/user/changePassword', 
           {
             oldPassword: data.oldPassword,
             newPassword: data.newPassword

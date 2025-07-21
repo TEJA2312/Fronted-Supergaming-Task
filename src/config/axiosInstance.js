@@ -3,7 +3,7 @@ import { store } from '../redux/store';
 import { setUserCreds } from '../redux/userSlice.js';
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8080/',
+  baseURL: 'http://54.226.102.198:8080/',
   withCredentials: true,
 });
 

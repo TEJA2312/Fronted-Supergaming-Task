@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Pencil } from "lucide-react";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import axiosInstance from "../config/axiosInstance.js";
 
 
 const CharacterModal = ({ activeCharacter }) => {
@@ -30,7 +31,7 @@ const CharacterModal = ({ activeCharacter }) => {
    if (parseInt(data.characterLevel) !== activeCharacter?.level) logs.push({ field: 'level', from: activeCharacter?.level, to: parseInt(data.characterLevel) })
 
     try {
-      await axios.post('http://localhost:8080/api/v1/character/updateCharacterById', {
+      await axiosInstance.post('api/v1/character/updateCharacterById', {
         id: activeCharacter?._id,
         name: data.characterName,
         description: data.characterDescription,

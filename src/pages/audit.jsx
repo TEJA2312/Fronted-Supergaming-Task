@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../config/axiosInstance";
 import { useSelector } from "react-redux";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader } from "lucide-react";
 
 function AuditPage() {
   const user = useSelector(state => state.user.user);
@@ -22,6 +22,14 @@ function AuditPage() {
     getAllAudits();
 
   },[])
+
+  if(!auditsData) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+       <Loader className='animate-spin w-8 h-8 text-white' />
+      </div>
+    )
+  }
 
   return(
 
