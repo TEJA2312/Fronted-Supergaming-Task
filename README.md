@@ -11,5 +11,7 @@
 - After user logs in the User info and tokens are saved in Redux using redux persists
 - Axios Instance is create to intercept every request made to Backend
 - When the api give 403 error with message "Your access token has expired" then it renews the access token using a Refresh Token saved in httpOnly Cookie
+- Edit are restricted to user with role admin and writer
+- audit logs display page is restricted to admin only
 Hopefully Rest of the Code is pretty standard!.
 
